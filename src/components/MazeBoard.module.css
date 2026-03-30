@@ -1,0 +1,29 @@
+.board {
+  display: grid;
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.cell {
+  position: relative;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player {
+  display: block;
+  width: 60%;
+  height: 60%;
+  border-radius: 50%;
+  background: #00e676;
+  box-shadow: 0 0 6px rgba(0, 230, 118, 0.6);
+}
+
+.goal {
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #e94560;
+  line-height: 1;
+}

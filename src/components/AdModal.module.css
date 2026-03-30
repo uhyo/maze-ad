@@ -1,0 +1,131 @@
+.adContainer {
+  position: relative;
+  width: 90%;
+  max-width: 480px;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  border: 3px solid #e94560;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 8px 32px rgba(233, 69, 96, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  color: #fff;
+  text-align: center;
+}
+
+.adLabel {
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.05em;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.adHeader {
+  margin-bottom: 1rem;
+}
+
+.adTitle {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0 0 0.25rem;
+  background: linear-gradient(90deg, #e94560, #ff6b6b);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.adSubtitle {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0.25rem 0 0;
+}
+
+.mazeContent {
+  position: relative;
+  min-height: 200px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mazeOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 8px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.gameName {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 0.05em;
+  -webkit-text-stroke: 1.5px #e94560;
+  paint-order: stroke fill;
+  text-shadow:
+    2px 2px 0 #e94560,
+    -2px -2px 0 #e94560,
+    2px -2px 0 #e94560,
+    -2px 2px 0 #e94560,
+    0 3px 12px rgba(0, 0, 0, 0.6);
+  animation: tilt 3s ease-in-out infinite;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, #e94560, #ff6b6b);
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 50px;
+  box-shadow: 0 4px 16px rgba(233, 69, 96, 0.5);
+  letter-spacing: 0.05em;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes tilt {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+.fadeOut {
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
