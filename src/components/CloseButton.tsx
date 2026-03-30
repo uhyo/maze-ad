@@ -69,17 +69,18 @@ export function CloseButton({
     };
   }, [phase, goalCellRef, onEscapeComplete]);
 
-  if (phase === "playing" || phase === "completed") return null;
+  const isAtGoal = phase === "playing" || phase === "completed";
 
   return (
     <button
       ref={buttonRef}
-      className={`${styles.closeButton} ${phase === "escaping" ? styles.escaping : ""}`}
+      className={`${styles.closeButton} ${phase === "escaping" ? styles.escaping : ""} ${isAtGoal ? styles.atGoal : ""}`}
       aria-label="Close"
       type="button"
-      onMouseEnter={handleInteraction}
-      onClick={handleInteraction}
-      onTouchStart={handleInteraction}
+      onMouseEnter={isAtGoal ? undefined : handleInteraction}
+      onClick={isAtGoal ? undefined : handleInteraction}
+      onTouchStart={isAtGoal ? undefined : handleInteraction}
+      data-testid={isAtGoal ? "goal-marker" : undefined}
     >
       ✕
     </button>

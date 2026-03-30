@@ -62,7 +62,12 @@ export function AdModal({ onDismiss }: AdModalProps) {
           {phase !== "playing" && phase !== "completed" && (
             <div className={styles.mazeOverlay} data-testid="maze-overlay">
               <span className={styles.gameName}>Maze Master</span>
-              <span className={styles.ctaButton}>今すぐ無料でプレイ！</span>
+              <a
+                className={styles.ctaButton}
+                href="https://github.com/uhyo/maze-ad"
+                target="_blank"
+                rel="noopener noreferrer"
+              >今すぐ無料でプレイ！</a>
             </div>
           )}
         </div>

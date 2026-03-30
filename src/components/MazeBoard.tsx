@@ -48,7 +48,6 @@ export function MazeBoard({ maze, playerPosition, goalCellRef }: MazeBoardProps)
               {isPlayer && (
                 <span className={styles.player} data-testid="player-marker" />
               )}
-              {isGoal && <span className={styles.goal}>✕</span>}
             </div>
           );
         })

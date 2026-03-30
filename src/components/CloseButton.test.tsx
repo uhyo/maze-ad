@@ -173,7 +173,7 @@ describe("CloseButton", () => {
       expect(onEscapeComplete).toHaveBeenCalledTimes(1);
     });
 
-    it("does not render the button in playing phase", () => {
+    it("stays rendered as goal marker in playing phase", () => {
       render(
         <CloseButton
           phase="playing"
@@ -182,12 +182,10 @@ describe("CloseButton", () => {
           onEscapeComplete={() => {}}
         />
       );
-      expect(
-        screen.queryByRole("button", { name: /close/i })
-      ).not.toBeInTheDocument();
+      expect(screen.getByTestId("goal-marker")).toBeInTheDocument();
     });
 
-    it("does not render the button in completed phase", () => {
+    it("stays rendered as goal marker in completed phase", () => {
       render(
         <CloseButton
           phase="completed"
@@ -196,9 +194,23 @@ describe("CloseButton", () => {
           onEscapeComplete={() => {}}
         />
       );
-      expect(
-        screen.queryByRole("button", { name: /close/i })
-      ).not.toBeInTheDocument();
+      expect(screen.getByTestId("goal-marker")).toBeInTheDocument();
+    });
+
+    it("is non-interactive in playing phase", () => {
+      const onEscapeStart = vi.fn();
+      render(
+        <CloseButton
+          phase="playing"
+          goalCellRef={{ current: goalCell }}
+          onEscapeStart={onEscapeStart}
+          onEscapeComplete={() => {}}
+        />
+      );
+      const button = screen.getByTestId("goal-marker");
+      fireEvent.click(button);
+      fireEvent.mouseEnter(button);
+      expect(onEscapeStart).not.toHaveBeenCalled();
     });
   });
 });

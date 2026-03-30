@@ -244,15 +244,15 @@ describe("End-to-end: complete user journey", () => {
       expect(screen.queryByTestId("player-marker")).not.toBeInTheDocument();
     });
 
-    it("close button is hidden after escape animation completes", () => {
+    it("close button becomes goal marker after escape animation completes", () => {
       render(<App />);
       triggerScrollPastThreshold();
 
       clickCloseButton();
       advancePastEscapeAnimation();
 
-      // Close button should be removed from DOM in playing phase
-      expect(screen.queryByRole("button", { name: /close/i })).not.toBeInTheDocument();
+      // Close button stays as the goal marker
+      expect(screen.getByTestId("goal-marker")).toBeInTheDocument();
     });
 
     it("ad heading is visible when modal is shown", () => {

@@ -94,6 +94,8 @@
   border-radius: 50px;
   box-shadow: 0 4px 16px rgba(233, 69, 96, 0.5);
   letter-spacing: 0.05em;
+  text-decoration: none;
+  pointer-events: auto;
   animation: pulse 2s ease-in-out infinite;
 }
 

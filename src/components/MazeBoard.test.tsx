@@ -82,13 +82,13 @@ describe("MazeBoard", () => {
       expect(goalCell).toHaveAttribute("data-goal", "true");
     });
 
-    it("renders a close button icon inside the goal cell", () => {
+    it("does not render a goal icon inside the goal cell (handled by CloseButton)", () => {
       const maze = createTestMaze();
       render(<MazeBoard maze={maze} playerPosition={null} />);
       const goalCell = screen.getByTestId(
         `maze-cell-${maze.goal.row}-${maze.goal.col}`
       );
-      expect(goalCell.textContent).toContain("✕");
+      expect(goalCell.textContent).toBe("");
     });
 
     it("updates player indicator when position changes", () => {

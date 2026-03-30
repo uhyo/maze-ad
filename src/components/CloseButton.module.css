@@ -26,3 +26,8 @@
   transition: transform 0.5s ease-in-out;
   pointer-events: none;
 }
+
+.atGoal {
+  pointer-events: none;
+  cursor: default;
+}
