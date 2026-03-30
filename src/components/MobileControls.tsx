@@ -9,9 +9,9 @@ interface MobileControlsProps {
 export function MobileControls({ move, visible }: MobileControlsProps) {
   return (
     <div
-      className={styles.controls}
+      className={`${styles.controls} ${visible ? styles.visible : ""}`}
       data-testid="mobile-controls"
-      style={{ visibility: visible ? "visible" : "hidden" }}
+      style={visible ? undefined : { visibility: "hidden" }}
     >
       <div className={styles.row}>
         <button

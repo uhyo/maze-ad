@@ -45,12 +45,51 @@
 
 .mazeContent {
   position: relative;
-  min-height: 200px;
   background: rgba(0, 0, 0, 0.3);
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+}
+
+.glassReflection {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  border-radius: 8px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.18) 3%,
+      rgba(255, 255, 255, 0.35) 5%,
+      rgba(255, 255, 255, 0.18) 7%,
+      rgba(255, 255, 255, 0) 12%,
+      rgba(255, 255, 255, 0) 18%,
+      rgba(255, 255, 255, 0.08) 20%,
+      rgba(255, 255, 255, 0.15) 21%,
+      rgba(255, 255, 255, 0.08) 22%,
+      rgba(255, 255, 255, 0) 27%
+    );
+  background-size: 400% 400%;
+  background-position: 0% 0%;
+  animation: glassSweep 1.4s ease-out forwards;
+}
+
+@keyframes glassSweep {
+  0% {
+    opacity: 1;
+    background-position: 0% 0%;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    background-position: 100% 100%;
+  }
 }
 
 .mazeOverlay {
@@ -65,6 +104,23 @@
   border-radius: 8px;
   z-index: 1;
   pointer-events: none;
+}
+
+.overlayHide {
+  animation: overlayFadeOut 0.4s ease-out forwards;
+}
+
+.overlayHide .ctaButton {
+  pointer-events: none;
+}
+
+@keyframes overlayFadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .gameName {

@@ -5,6 +5,23 @@
   gap: 4px;
   margin-top: 1rem;
   touch-action: manipulation;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.visible {
+  animation: fadeIn 0.4s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    visibility: visible;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 .row {

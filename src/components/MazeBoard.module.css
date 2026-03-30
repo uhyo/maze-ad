@@ -1,6 +1,6 @@
 .board {
   display: grid;
-  width: 100%;
+  width: min(100%, calc(100vh - 20rem));
   aspect-ratio: 1;
 }
 
