@@ -2,7 +2,6 @@ import { describe, expect, it } from "vitest";
 import {
   generateMaze,
   type MazeGrid,
-  type MazeResult,
   type Position,
 } from "./mazeGenerator";
 
