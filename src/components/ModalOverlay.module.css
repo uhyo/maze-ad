@@ -6,5 +6,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100dvh;
   padding: 1rem;
+  padding-top: max(1rem, env(safe-area-inset-top));
+  padding-right: max(1rem, env(safe-area-inset-right));
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  padding-left: max(1rem, env(safe-area-inset-left));
 }
