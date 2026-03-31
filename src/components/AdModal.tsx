@@ -64,7 +64,7 @@ export function AdModal({ onDismiss }: AdModalProps) {
           <p className={styles.adSubtitle}>全世界1,000万DL突破の大人気パズル</p>
         </div>
         <div
-          className={styles.mazeContent}
+          className={`${styles.mazeContent} ${phase === "playing" || phase === "completed" ? styles.mazeContentPlaying : ""}`}
           data-testid="maze-content"
           onClick={handleMazeClick}
         >
